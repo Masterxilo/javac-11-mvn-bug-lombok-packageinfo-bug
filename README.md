@@ -198,11 +198,16 @@ Caused by: java.lang.NullPointerException
 # Cause
 The cause is the package-info.java file without a "package" statement - an easy mistake to make.
 
+To fix the compilation error, simply make the first line of package-info.java read:
+```
+package mypackage;
+```
+
 This should not crash the compiler.
 
-In java 8, there is no problem with this: If you make sure that `javac -version` and `java -version` report 1.8, then
+In java 8, there was no problem with this: If you make sure that `javac -version` and `java -version` report 1.8, then
 
 ```bash
 mvn -f pom.java8.xml clean compile
 ```
-works just fine
+works just fine.
